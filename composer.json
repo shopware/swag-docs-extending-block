@@ -1,0 +1,31 @@
+{
+    "name": "swag/extending-block",
+    "description": "Example plugin which overwrites a storefront twig block",
+    "version": "v1.0.0",
+    "type": "shopware-platform-plugin",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "shopware AG"
+        }
+    ],
+    "require": {
+        "shopware/platform": "dev-master"
+    },
+    "extra": {
+        "shopware-plugin-class": "Swag\\ExtendingBlock\\ExtendingBlock",
+        "label": {
+            "de-DE": "Beispiel Plugin, welches einen Twig Block in der Storefront überschreibt",
+            "en-GB": "Example plugin which overwrites a storefront twig block"
+        },
+        "description": {
+            "de-DE": "Beispiel Plugin, welches einen Twig Block in der Storefront überschreibt",
+            "en-GB": "Example plugin which overwrites a storefront twig block"
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Swag\\ExtendingBlock\\": "src/"
+        }
+    }
+}
