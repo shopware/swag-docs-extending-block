@@ -15,12 +15,12 @@
     "extra": {
         "shopware-plugin-class": "Swag\\ExtendingBlock\\ExtendingBlock",
         "label": {
-            "de-DE": "Beispiel Plugin, welches einen Twig Block in der Storefront überschreibt",
-            "en-GB": "Example plugin which overwrites a storefront twig block"
+            "de-DE": "Label für das Plugin ExtendingBlock",
+            "en-GB": "Label for the plugin ExtendingBlock"
         },
         "description": {
-            "de-DE": "Beispiel Plugin, welches einen Twig Block in der Storefront überschreibt",
-            "en-GB": "Example plugin which overwrites a storefront twig block"
+            "de-DE": "Beschreibung für das Plugin ExtendingBlock",
+            "en-GB": "Description for the plugin ExtendingBlock"
         }
     },
     "autoload": {
