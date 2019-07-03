@@ -10,7 +10,8 @@
         }
     ],
     "require": {
-        "shopware/platform": "dev-master"
+        "shopware/core": "*",
+        "shopware/storefront": "*"
     },
     "extra": {
         "shopware-plugin-class": "Swag\\ExtendingBlock\\ExtendingBlock",
