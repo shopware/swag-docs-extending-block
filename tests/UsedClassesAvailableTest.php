@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 
-namespace Swag\ExtendingBlockTests;
+namespace Swag\ExtendingBlock\Tests;
 
 use Shopware\Core\Framework\Test\TestCaseBase\IntegrationTestBehaviour;
 use PHPUnit\Framework\TestCase;
@@ -12,9 +12,23 @@ class UsedClassesAvailableTest extends TestCase
 
     public function testClassesAreInstantiable(): void
     {
-        $files = $this->getPluginClasses();
+        $namespace = str_replace('Tests', '', __NAMESPACE__);
 
-        static::assertCount(1, $files);
+        $files = $this->getPluginClasses();
+        foreach ($files as $file) {
+            if (!preg_match('/.*.php$/', $file->getRelativePathname())) {
+                continue;
+            }
+
+            $classRelativePath = str_replace(['.php', '/'], ['', '\\'], $file->getRelativePathname());
+
+            $this->getMockBuilder($namespace . $classRelativePath)
+                ->disableOriginalConstructor()
+                ->getMock();
+        }
+
+        // Nothing broke so far, classes seem to be instantiable
+        static::assertCount(2, $files);
     }
 
     private function getPluginClasses(): Finder
@@ -22,6 +36,6 @@ class UsedClassesAvailableTest extends TestCase
         $finder = new Finder();
         $finder->in(realpath(__DIR__ . '/../src'));
 
-        return $finder->files()->name('*.twig');
+        return $finder->files()->name('/.*.(twig|php)$/');
     }
 }

@@ -28,5 +28,10 @@
         "psr-4": {
             "Swag\\ExtendingBlock\\": "src/"
         }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Swag\\ExtendingBlock\\Tests\\": "tests/"
+        }
     }
 }
